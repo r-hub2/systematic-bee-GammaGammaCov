@@ -1,0 +1,39 @@
+#' Simulated Customer Spend Data
+#'
+#' Simulated transaction-level data with covariates, generated from the
+#' gamma-gamma model fitted by \code{\link{GGcov_MLE}}. The data mimic the
+#' structure of retail transaction logs with covariates, such as the apparel
+#' example in the CLVTools vignette (Bachmann et al., 2025). \code{spend_data}
+#' holds 1000 customers; \code{spend_data_sample} is a random subset of 300
+#' customers for quick examples.
+#'
+#' Each row is one transaction. The true parameters used to generate the data
+#' are p = 2 (within-customer shape), q = 8 (mixture shape), gamma = 200
+#' (mixture rate), and coefficients -0.8 (\code{discount}, per unit), -0.3
+#' (\code{gender} male versus female), 0.3 (\code{channel} web versus store)
+#' and -0.4 (\code{channel} app versus store).
+#'
+#' @format A data frame with one row per transaction and 5 variables:
+#' \describe{
+#'   \item{Id}{Customer identifier.}
+#'   \item{Price}{Amount spent in the transaction (strictly positive).}
+#'   \item{discount}{Time-varying numeric covariate: the discount applied to
+#'     the transaction, between 0 and 1.}
+#'   \item{gender}{Time-invariant factor with 2 levels (\code{"female"},
+#'     \code{"male"}), repeated on each of the customer's rows. The first level
+#'     is the reference.}
+#'   \item{channel}{Time-invariant factor with 3 levels (\code{"store"},
+#'     \code{"web"}, \code{"app"}), repeated on each of the customer's rows. The
+#'     first level is the reference.}
+#' }
+#' @source Simulated; see \code{data-raw/spend_data.R}.
+#' @references Bachmann, P., Kuebler, N., Meierer, M., Naef, J., Oblander, E.,
+#'   & Schilter, P. (2025). CLVTools: Tools for Customer Lifetime Value
+#'   Estimation. R package version 0.12.1.
+#'   \url{https://github.com/bachmannpatrick/clvtools}
+#' @examples
+#' head(spend_data)
+"spend_data"
+
+#' @rdname spend_data
+"spend_data_sample"

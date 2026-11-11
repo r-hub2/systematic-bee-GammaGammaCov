@@ -1,0 +1,23 @@
+Package: GammaGammaCov
+Type: Package
+Title: Gamma-Gamma Spend Models with Covariates
+Version: 0.1.0
+Authors@R: person("Ka Lok", "Lee", email = "kaloklee@gmail.com", role = c("aut", "cre"))
+Description: Maximum likelihood estimation of the gamma-gamma model of spend per transaction, with time-varying and time-invariant covariates and unobserved cross-sectional heterogeneity, following Fader and Hardie (2024) <https://brucehardie.com/notes/045/>.
+License: Apache License (>= 2)
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+Imports: stats, graphics
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Depends: R (>= 3.5)
+Config/roxygen2/version: 8.1.1
+Config/testthat/edition: 3
+URL: https://kaloklee.github.io/GammaGammaCov/,
+        https://github.com/kaloklee/GammaGammaCov
+BugReports: https://github.com/kaloklee/GammaGammaCov/issues
+NeedsCompilation: no
+Packaged: 2026-11-11 18:35:20 UTC; kartmanlmde
+Author: Ka Lok Lee [aut, cre]
+Maintainer: Ka Lok Lee <kaloklee@gmail.com>
