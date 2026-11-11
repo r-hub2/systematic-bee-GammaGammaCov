@@ -140,9 +140,10 @@ GGcov_MLE <- function(fo, data, subject, level = 0.95) {
     Xs  <- scale(X[, -1, drop = FALSE])
     ctr <- attr(Xs, "scaled:center")
     scl <- attr(Xs, "scaled:scale")
-    if (any(scl == 0))
+    no_var <- is.na(scl) | scl <= sqrt(.Machine$double.eps) * pmax(1, abs(ctr))
+    if (any(no_var))
       stop("Covariate(s) with no variation: ",
-           paste(names(scl)[scl == 0], collapse = ", "),
+           paste(names(scl)[no_var], collapse = ", "),
            ". Remove them before fitting.", call. = FALSE)
   }
 
